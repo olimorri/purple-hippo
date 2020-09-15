@@ -1,0 +1,73 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background: white
+}
+
+
+.container{
+    width: 66%;
+    background-color: hsl(168, 50%, 29%);
+    opacity: 0.9;
+    align-content: center;
+    margin: auto;
+    color: white;
+}
+
+#title{
+    text-align: center;
+    color:  hsl(168, 50%, 29%);
+    margin-bottom: 0px;
+}
+
+#description{
+    text-align:center;
+    font-style: italic;
+    color:  hsl(168, 50%, 29%);
+   
+}
+
+#survey-form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid black;
+    align-items: center;
+    background-radius: 0.5rem;
+    padding: 20px
+    
+    
+}
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: solid red;
+    border-radius: 0.25rem;
+    margin-top: 10px;
+    width: 90%;
+    padding: 1%;
+    
+
+}
+
+.form-question{
+    border: solid lightpink;
+    font-weight: bold;
+}
+
+.form-item{
+    border: solid purple;
+    border-radius: 0.25rem;
+}
+
+.clue{
+    font-size: 0.9rem;
+    line-height: 0px;
+    
+}
+
+input {
+    width: 100% !important;
+}
