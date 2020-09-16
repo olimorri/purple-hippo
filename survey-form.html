@@ -7,7 +7,7 @@
     <body>
     <div>
         <h1 id="title">dishy Feedback Form</h1>
-        <p id="description">Thank you for your feedback and for taking the time to help us improve our service.</p>
+        <p id="description">Thank you for your feedback and for taking the time to help us improve our service!</p>
     </div>
     <div class="container">
         <div class="survery-form-elements">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-item">
                         <select id="dropdown" id="recipe--quantity-choice" required>
-                        <option disabled slected value>Please select from the following...</option>
+                        <option disabled selected value>Please select from the following...</option>
                         <option value="black-bean-stew">Black Bean Stew</option>
                         <option value="lentil-salad">Halloumi & Lentil Salad</option>
                         <option value="satay-stir-fry">Satay Stir Fry</option>
@@ -51,24 +51,24 @@
                 </div>
                 <div class="form-element">
                     <div class="form-question">
-                        <p>Would you recommmend dishy to a friend?</p>
+                        <p class="question">Would you recommmend dishy to a friend?</p>
                     </div>
                     <div class="form-item">
                         <label>
-                            <input
+                            <input class="input-radio"
                             name="user-recommend"
                             value="yes"
                             type="radio"
                             checked>
                         Yes</label>
                         <label>
-                            <input
+                            <input class="input-radio"
                             name="user-recommend"
                             value="maybe"
                             type="radio">
                         Maybe</label>
                         <label>
-                            <input
+                            <input class="input-radio"
                             name="user-recommend"
                             value="no"
                             type="radio">
@@ -77,17 +77,17 @@
                 </div>
                 <div class="form-element">
                     <div class="form-question">
-                        <p>What would you like to see improved about dishy?</p>
+                        <p class="question">What would you like to see improved about dishy?</p>
                         <p class="clue">Check all that apply.</p>
                     </div>
                     <div class="form-item">
-                        <input type="checkbox" id="more-recipes" name="more-recipes" value="more-recipes">
+                        <input class="input-checkbox" type="checkbox" id="more-recipes" name="more-recipes" value="more-recipes">
                         <label for="more-recipes">More recipes</label>
-                        <input type="checkbox" id="subscription" name="subscription" value="subscription">
+                        <input class="input-checkbox" type="checkbox" id="subscription" name="subscription" value="subscription">
                         <label for="subscription">Subscription service</label>
-                        <input type="checkbox" id="more-delivery-days" name="more-delivery-days" value="more-delivery-days">
+                        <input class="input-checkbox" type="checkbox" id="more-delivery-days" name="more-delivery-days" value="more-delivery-days">
                         <label for="more-delivery-days">Additional delivery days</label>
-                        <input type="checkbox" id="more-vegan-options" name="more-vegan-options" value="more-vegan-options">
+                        <input class="input-checkbox" type="checkbox" id="more-vegan-options" name="more-vegan-options" value="more-vegan-options">
                         <label for="more-vegan-options">More vegan options</label>
                     </div>
                 </div>
