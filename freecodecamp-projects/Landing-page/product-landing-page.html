@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dishy Landing Page</title>
+        <link href="product-landing-page.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header id="header">
+            <img id="header-img" src="https://static1.squarespace.com/static/5e1de5de98261a04731ad93c/t/5e9c79b839f0f40fc86ae420/1591915981131/?format=1500w" alt="dishy logo">
+            <nav id="nav-bar">
+                <a href="#recipes" class="nav-link">Recipes</a>
+                <a href="#essentials" class="nav-link">Essentials</a>
+                <a href="#newsletter" class="nav-link">Newsletter</a>
+            </nav>
+            <button href="" id="sign-in-button">Sign In
+            </button>
+        </header>
+        <main>
+            <div class="landing-section">
+                <div class="hero-container">
+                    <div class="hero-overlay">
+                        <img class="hero" alt="dishy Recipes on Plates" src="https://static1.squarespace.com/static/5e1de5de98261a04731ad93c/t/5eb92f4cb2acbe6aa400719a/1588150044758/socialimage.jpg?format=1500w">
+                        <h1 class="hero-text">Hungry for change?</h1>
+                        <input type="button" class="hero-button" value="GET STARTED">
+                    </div>
+                </div>
+            </div>
+            <div class="landing-section">
+                <div id="recipes">
+                    <h2 class="section-header">Recipes</h2>
+                    <div class="unordered-list">
+                        <h3>Recipes of the month</h3>
+                        <ul>
+                            <li>The Ultimate Veggie Burger</li>
+                            <li>Cauliflower Biryani</li>
+                            <li>Halloumi and Lentil Salad</li>
+                        </ul>
+                    </div>
+                    <div class="video-container">
+                        <iframe id="video" src="https://www.youtube.com/embed/mhDJNfV7hjk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="landing-section">
+                <div id="essentials">
+                    <h2 class="section-header">Essentials</h2>
+                </div>
+            </div>
+            <div class="landing-section">
+                <div id="newsletter">
+                    <h2 class="section-header">Newsletter</h2>
+                    <form id="form" action="https://github.com/olimorri">
+                        <label class="label" for="email">Sign up to get the latest news, recipes and cooking tips! 
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="Email address..." >
+                        <input type="submit" id="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
