@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Oliver Morrison's Portfolio</title>
+        <title>Oliver Morrison's Portfolio!</title>
         <link href="personal-portfolio.css" rel="stylesheet" type="text/css">
     </head>
     <header>
-        <nav id="nav-bar">
-            <a href="" id="nav-item">My Work</a>
+        <nav id="navbar">
+            <a href="#projects" id="nav-item">My Work</a>
         </nav>
     </header>
     <body>
         <div id="welcome-section">
             <h1 id="hero-h1">Oliver Morrison</h1>
-            <h2 id="hero-h2">I'm a Web Developer living in the UK, specialising in Front-end and design.</h2>
+            <h2 id="hero-h2">Web Developer specialising in Front-end and design.</h2>
         </div>
-        <div class="section-title">
-            <h2>Projects</h2>
-        </div>
-            <div id="project-section">
-            <img class="project-image" src="https://codepen.io/olimorri/details/bGpONrV" alt="project">
-            <a href="" class="project-grid-item">Landing Page</a>
-            
-            <a href="" class="project-grid-item">Survey Form</a>
-            
-            <a href="" class="project-grid-item">Tribute Page</a>
-        </div>
+        <section id="projects">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div id="project-container">
+                <div class="project-tile">
+                    <img src="https://codepen.io/olimorri/pen/bGpONrV/image/large.png" class="project-image" alt="Website Landing Page">
+                    <a href="https://codepen.io/olimorri/pen/bGpONrV" class="project-link" target="_blank">Landing Page</a>
+                </div>
+                <div class="project-tile">
+                    <img src="https://codepen.io/olimorri/pen/JjXBqgO/image/large.png" class="project-image" alt="Survey Form">
+                    <a href="https://codepen.io/olimorri/pen/JjXBqgO" class="project-link" target="_blank">Survey Form</a>
+                </div>
+                <div class="project-tile">
+                    <img src="https://codepen.io/olimorri/pen/jOqXqyY/image/large.png" class="project-image" alt="Technical Documentation">
+                    <a href="https://codepen.io/olimorri/pen/jOqXqyY" class="project-link" target="_blank">Technical Documentation</a>
+                </div>
+            </div>
+            <a class="btn" href="https://github.com/olimorri/" target="_blank" id="profile-link">SEE MORE</a>
+        </section>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </body>
 </html>

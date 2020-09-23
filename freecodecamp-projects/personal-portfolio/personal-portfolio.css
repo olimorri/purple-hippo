@@ -19,24 +19,38 @@ p{
     font-weight: 200;
 }
 
-#nav-bar{
+#navbar{
     display: flex;
     flex-direction: row;
     height: 75px;
     width: 100%;
-    background-color: lightblue;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    background-color:lightgray;
 
+}
+
+header{
+    position: sticky;
+    top:0;
+    left: 0;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: darkslategray;
+    margin-right: 30px;
 }
 
 #welcome-section{
     width: 100%;
-    background-color:#4c8bf5;
-    color: white;
+    min-height: 100vh;
+    background-color:darkslategray;
+    color: lightgrey;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #hero-h1{
@@ -48,16 +62,88 @@ p{
     padding: 20px;
     margin-top: 0px;
 }
-
-#project-section{
-    width: 100;
-    display: grid;
-    grid-template-rows: 200px;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-}
-
 .section-title{
+    width: 100%;
     text-align: center;
+    color: darkslategray;
 }
 
+.section-title h2{
+    font-size: 32px;
+    padding: 15px;
+}
+
+#projects{
+    width: 99%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgray;
+}
+
+#project-container{
+    width: 90%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 10px;
+    justify-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+    #project-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #project-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-tile{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.project-link{
+    max-width: 100%;
+    text-decoration: none;
+    color: darkslategray;
+}
+
+.project-image{
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 360px;
+    margin-bottom: 10px;
+
+}
+
+.btn{
+    background-color: darkslategray;
+    color: lightgrey;
+    border: 1px transparent;
+    padding: 20px;
+    max-height: 50px;
+    border-radius: 0.5em;
+    margin: 15px auto 20px auto;
+    text-decoration: none;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+.project-tile:hover{
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 768px) {
+    .project-tile:hover{
+        transform: scale(1);
+    }
+}
