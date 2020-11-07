@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Coding Challange: Oliver Morrison</title>
+        <link href="coding-challenge.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class='container'>
+            <div class="heading-container">
+                <h1>Chatbot</h1>
+            </div>
+            <div id='message-container'>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message-input" placeholder="Type a message...">
+                <button type="submit" id="send-button">Send</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+
+            var answerArr = ["Hello", "My name is Oliver, what's your name?", "Nice to meet you!"];
+
+            var userMessage = [];
+
+            setTimeout(function() {
+                    }, 2000);
+
+
+
+           
+
+            $(function(){
+
+                $("#message-container").html(answerArr[0]);
+
+                $("#send-button").click(function(){
+
+                    var lastMessage = $("#message-input").val();
+
+                    userMessage.push(lastMessage);
+                    $("#message-input").val("");
+                    var prevState = $("#message-container").html();
+                    let count = userMessage.length;
+
+                    //need to find a way to sort this out
+                    setTimeout(1);
+                    $("#message-container").html(prevState + "<br>" + lastMessage + "<br>" + answerArr[count]);
+                    $("#message-container").animate({ scrollTop: $(document).height() }, 1);
+
+
+
+                });
+
+                $("#message-input").keypress(function(e){
+                if (e.which == 13){
+                    $("#send-button").click();
+                    }
+                });    
+
+            });
+
+
+
+                
+
+           
+
+            console.log(userMessage);
+
+        </script>
+    </body>
+</html>
