@@ -37,6 +37,7 @@ h1{
 
 #nametag{
     width: 90%;
+    margin-left: 10px;
 }
 
 #message-container{
@@ -79,6 +80,28 @@ h1{
     border-radius: 25px;
     background-color: turquoise;
     padding: 1em;
+    border: none;
+    margin: 5px;
+    align-self: center;
+    flex-grow: 1;
+    outline: none;
+}
+
+#send-button:hover{
+    border-radius: 25px;
+    background-color: hsla(174, 72%, 56%, 0.616);
+    padding: 1em;
+    border: none;
+    margin: 5px;
+    align-self: center;
+    flex-grow: 1;
+    outline: none;
+}
+
+#send-button:active{
+    border-radius: 25px;
+    background-color: turquoise;
+    padding: 1.25em;
     border: none;
     margin: 5px;
     align-self: center;
