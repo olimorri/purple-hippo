@@ -44,9 +44,11 @@ h1{
     height: 500px;
     border: none;
     background-color: lightblue;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    scrollbar-width: thin;
 }
 
 .input-container{
@@ -96,7 +98,7 @@ h1{
     max-width: 33%;
     text-align: left;
     margin-left: 10px;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
 }
 
 .userbubble{
@@ -111,7 +113,7 @@ h1{
     max-width: 33%;
     text-align: right;
     margin-right: 10px;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
 }
 
 #usertime{
@@ -119,7 +121,7 @@ h1{
     align-self: flex-end;
     text-align: right;
     margin-right: 10px;
-    margin-top: -5px;
+    margin-top: 1px;
     background-color: darkcyan;
     color: whitesmoke;
     padding: 5px;
@@ -131,7 +133,7 @@ h1{
     align-self: flex-start;
     text-align: rigleftht;
     margin-left: 10px;
-    margin-top: -5px;
+    margin-top: 1px;
     background-color: blue;
     color: whitesmoke;
     padding: 5px;
