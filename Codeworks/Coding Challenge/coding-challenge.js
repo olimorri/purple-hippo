@@ -22,6 +22,7 @@ function userMessageFlow(){
 
 };
 
+
 function botMessageFlow(){
     let count = userMessage.length;
     let newBotPElement = document.createElement("p");
@@ -29,7 +30,8 @@ function botMessageFlow(){
     document.getElementById("message-container").appendChild(newBotPElement);
     newBotPElement.className = "cathybubble";
     objDiv.scrollTop = objDiv.scrollHeight;
-}
+    addBotTimestamp();
+};
 
 function displayHello(){
     document.getElementById('first-message').innerHTML = firstMessage;
@@ -43,24 +45,28 @@ function addZero(i) {
 };
 
 function addTimestamp(){
+    let newDate = new Date();
     let newTimestamp = document.createElement("p");
-    let hours = addZero(date.getHours());
-    let minutes = addZero(date.getMinutes());
-    let seconds = addZero(date.getSeconds());
+    let hours = addZero(newDate.getHours());
+    let minutes = addZero(newDate.getMinutes());
+    let seconds = addZero(newDate.getSeconds());
     newTimestamp.innerHTML = hours + ":" + minutes + ":" + seconds;
     document.getElementById("message-container").appendChild(newTimestamp);
     newTimestamp.id = "usertime";
+    objDiv.scrollTop = objDiv.scrollHeight;
     
 };
 
 function addBotTimestamp(){
+    let newBotDate = new Date();
     let newTimestamp = document.createElement("p");
-    let hours = addZero(date.getHours());
-    let minutes = addZero(date.getMinutes());
-    let seconds = addZero(date.getSeconds());
+    let hours = addZero(newBotDate.getHours());
+    let minutes = addZero(newBotDate.getMinutes());
+    let seconds = addZero(newBotDate.getSeconds());
     newTimestamp.innerHTML = hours + ":" + minutes + ":" + seconds;
     document.getElementById("message-container").appendChild(newTimestamp);
     newTimestamp.id = "bottime";
+    objDiv.scrollTop = objDiv.scrollHeight;
     
 };
 
@@ -75,10 +81,11 @@ document.getElementById("message-input").addEventListener("keydown", function(e)
 
 /* This function and the functions within it control the chat experience and sequences. */
 function messageFlow(){
+
     userMessageFlow();
     addTimestamp();
-    botMessageFlow();
-    addBotTimestamp();
+    setTimeout(botMessageFlow, 2000);
+    
 };
 
 /* This function is triggered when the'send' button or enter key are pressed. 
@@ -116,6 +123,19 @@ let count = userMessage.length;
             document.getElementById("message-container").appendChild(newBotPElement);
             newBotPElement.className = "cathybubble";
             objDiv.scrollTop = objDiv.scrollHeight;
+
+
+function addBotTimestamp(){
+    let newTimestamp = document.createElement("p");
+    let hours = addZero(date.getHours());
+    let minutes = addZero(date.getMinutes());
+    let seconds = addZero(date.getSeconds());
+    newTimestamp.innerHTML = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("message-container").appendChild(newTimestamp);
+    newTimestamp.id = "bottime";
+    objDiv.scrollTop = objDiv.scrollHeight;
+    
+};
 
 
 
