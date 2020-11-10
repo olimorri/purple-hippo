@@ -89,12 +89,14 @@ h1{
     color: whitesmoke;
     align-self: flex-start;
     padding: 18px;
-    border-radius: 25px;;
+    border-radius: 25px 25px 25px 0px;
     font-size: 20px;
     height: auto;
-    width: 33%; /* make this auto? */
+    width: auto;
+    max-width: 33%;
     text-align: left;
     margin-left: 10px;
+    margin-bottom: -5px;
 }
 
 .userbubble{
@@ -102,11 +104,37 @@ h1{
     color: whitesmoke;
     align-self: flex-end;
     padding: 20px;
-    border-radius: 25px;;
+    border-radius: 25px 25px 0px 25px;
     font-size: 20px;
     height: auto;
-    width: 33%; /* make this auto? */
+    width: auto;
+    max-width: 33%;
     text-align: right;
     margin-right: 10px;
+    margin-bottom: -5px;
+}
+
+#usertime{
+    font-size: 10px;
+    align-self: flex-end;
+    text-align: right;
+    margin-right: 10px;
+    margin-top: -5px;
+    background-color: darkcyan;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 25px 0px 25px 25px;
+}
+
+#bottime{
+    font-size: 10px;
+    align-self: flex-start;
+    text-align: rigleftht;
+    margin-left: 10px;
+    margin-top: -5px;
+    background-color: blue;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 0px 25px 25px 25px;
 }
 

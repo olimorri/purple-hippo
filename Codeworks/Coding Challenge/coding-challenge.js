@@ -5,46 +5,128 @@ const userMessage = [];
 
 const firstMessage = answerArr[0];
 
-// This displays the first automated message
+const objDiv = document.getElementById("message-container");
 
-    function displayHello(){
-        document.getElementById('first-message').innerHTML = firstMessage;
-    };
+const date = new Date();
 
-    displayHello();
+function userMessageFlow(){
 
-    document.getElementById("message-input").addEventListener("keydown", function(e) {
-        if (e.keyCode == 13) { messageFlow(); }
-    }, false);
+    let lastMessage = document.getElementById("message-input").value;
+    userMessage.push(lastMessage);
+    document.getElementById("message-input").value = "";
+    let newUserPElement = document.createElement("p");
+    newUserPElement.innerHTML = lastMessage;
+    document.getElementById("message-container").appendChild(newUserPElement);
+    newUserPElement.className = "userbubble";
+    objDiv.scrollTop = objDiv.scrollHeight;
 
-    function messageFlow(){
-        
-            let lastMessage = document.getElementById("message-input").value;
+};
+
+function botMessageFlow(){
+    let count = userMessage.length;
+    let newBotPElement = document.createElement("p");
+    newBotPElement.innerHTML = answerArr[count];
+    document.getElementById("message-container").appendChild(newBotPElement);
+    newBotPElement.className = "cathybubble";
+    objDiv.scrollTop = objDiv.scrollHeight;
+}
+
+function displayHello(){
+    document.getElementById('first-message').innerHTML = firstMessage;
+};
+
+function addZero(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+};
+
+function addTimestamp(){
+    let newTimestamp = document.createElement("p");
+    let hours = addZero(date.getHours());
+    let minutes = addZero(date.getMinutes());
+    let seconds = addZero(date.getSeconds());
+    newTimestamp.innerHTML = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("message-container").appendChild(newTimestamp);
+    newTimestamp.id = "usertime";
+    
+};
+
+function addBotTimestamp(){
+    let newTimestamp = document.createElement("p");
+    let hours = addZero(date.getHours());
+    let minutes = addZero(date.getMinutes());
+    let seconds = addZero(date.getSeconds());
+    newTimestamp.innerHTML = hours + ":" + minutes + ":" + seconds;
+    document.getElementById("message-container").appendChild(newTimestamp);
+    newTimestamp.id = "bottime";
+    
+};
+
+//#### Beginning of chat experience ####
+
+displayHello();
+addBotTimestamp();
+document.getElementById("message-input").addEventListener("keydown", function(e) {
+    if (e.keyCode == 13) { messageFlow(); }
+}, false);
+
+
+/* This function and the functions within it control the chat experience and sequences. */
+function messageFlow(){
+    userMessageFlow();
+    addTimestamp();
+    botMessageFlow();
+    addBotTimestamp();
+};
+
+/* This function is triggered when the'send' button or enter key are pressed. 
+In the first instance I initialise the lastMessage
+variable with the text from the textarea. Following this, I have set the text area to return to empty.
+Next, a new <p> element is created to include the value of lastMessage and appended onto
+the end of the div element. This gives the impression of the message being delivered
+below (as with all chat apps). Finally, I use this process again for the bot's message,
+using the length of userMessage to ensure that the correct message is sent. */
+
+/*
+
+let lastMessage = document.getElementById("message-input").value;
             userMessage.push(lastMessage);
             document.getElementById("message-input").value = "";
             let newUserPElement = document.createElement("p");
             newUserPElement.innerHTML = lastMessage;
             document.getElementById("message-container").appendChild(newUserPElement);
             newUserPElement.className = "userbubble";
-            var objDiv = document.getElementById("message-container");
-            objDiv.scrollTop = objDiv.scrollHeight;
-            let count = userMessage.length;
+
+            /* THIS NEEDS TO BE FIXED - its only displaying once on the first submit.
+            let newUserTimestamp = document.createElement("p");
+            document.getElementById("message-container").appendChild(newUserTimestamp);
+            newUserTimestamp.id = "usertime";
+            addTimestamp();
+            */
+           /*var objDiv = document.getElementById("message-container");
+           objDiv.scrollTop = objDiv.scrollHeight;
+
+
+
+let count = userMessage.length;
             let newBotPElement = document.createElement("p");
             newBotPElement.innerHTML = answerArr[count];
             document.getElementById("message-container").appendChild(newBotPElement);
             newBotPElement.className = "cathybubble";
             objDiv.scrollTop = objDiv.scrollHeight;
 
-           
-        };
 
-/* This function controls the message flow and is triggered when the'send' button or 
-enter key are pressed. In the first instance I initialise the lastMessage
-variable with the text from the textarea. Following this, I have set the text area to return to empty.
-Next, a new <p> element is created to include the value of lastMessage and appended onto
-the end of the div element. This gives the impression of the message being delivered
-below (as with all chat apps). Finally, I use this process again for the bot's message,
-using the length of userMessage to ensure that the correct message is sent. */
+
+
+
+*/
+
+
+
+
+
     
 ///////////////////////////////////////////////////////
 
