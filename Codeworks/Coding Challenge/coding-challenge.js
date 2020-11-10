@@ -26,11 +26,26 @@ function userMessageFlow(){
 function botMessageFlow(){
     let count = userMessage.length;
     let newBotPElement = document.createElement("p");
-    newBotPElement.innerHTML = answerArr[count];
+
+    if (userMessage.length < 5){
+        newBotPElement.innerHTML = answerArr[count];
+        document.getElementById("message-container").appendChild(newBotPElement);
+        newBotPElement.className = "cathybubble";
+        objDiv.scrollTop = objDiv.scrollHeight;
+        addBotTimestamp();
+    };
+    
+};
+
+function botFinalMessage(){
+
+    if(userMessage.length >= 5){
+    let newBotPElement = document.createElement("p");
+    newBotPElement.innerHTML = "Chatty Cathy is Offline!";
     document.getElementById("message-container").appendChild(newBotPElement);
-    newBotPElement.className = "cathybubble";
-    objDiv.scrollTop = objDiv.scrollHeight;
-    addBotTimestamp();
+    newBotPElement.className = "cathylastmessage";
+    objDiv.scrollTop = objDiv.scrollHeight
+    };
 };
 
 function displayHello(){
@@ -83,7 +98,8 @@ function messageFlow(){
 
     userMessageFlow();
     addTimestamp();
-    setTimeout(botMessageFlow, 2000);
+    setTimeout(botMessageFlow, 1000);
+    botFinalMessage();
     
 };
 
