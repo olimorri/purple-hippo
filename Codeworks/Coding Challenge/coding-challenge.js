@@ -1,5 +1,5 @@
 
-const answerArr = ["Hello", "My name is Cathy, what's your name?", "Nice to meet you!", "I am a chatbot", "Goodbye!"];
+const answerArr = ["Hello", "My name is Cathy, what's your name?", "Nice to meet you!", "I'm sorry, but I have to go now.", "Goodbye!"];
 
 const userMessage = [];
 
@@ -41,7 +41,7 @@ function botFinalMessage(){
 
     if(userMessage.length >= 5){
     let newBotPElement = document.createElement("p");
-    newBotPElement.innerHTML = "Chatty Cathy is Offline!";
+    newBotPElement.innerHTML = "Chatty Cathy is offline!";
     document.getElementById("message-container").appendChild(newBotPElement);
     newBotPElement.className = "cathylastmessage";
     objDiv.scrollTop = objDiv.scrollHeight
