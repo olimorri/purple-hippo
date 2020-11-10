@@ -53,8 +53,7 @@ function addTimestamp(){
     newTimestamp.innerHTML = hours + ":" + minutes + ":" + seconds;
     document.getElementById("message-container").appendChild(newTimestamp);
     newTimestamp.id = "usertime";
-    objDiv.scrollTop = objDiv.scrollHeight;
-    
+    objDiv.scrollTop = objDiv.scrollHeight;  
 };
 
 function addBotTimestamp(){
