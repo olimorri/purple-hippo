@@ -113,56 +113,7 @@ using the length of userMessage to ensure that the correct message is sent. */
 
 /*
 
-let lastMessage = document.getElementById("message-input").value;
-            userMessage.push(lastMessage);
-            document.getElementById("message-input").value = "";
-            let newUserPElement = document.createElement("p");
-            newUserPElement.innerHTML = lastMessage;
-            document.getElementById("message-container").appendChild(newUserPElement);
-            newUserPElement.className = "userbubble";
-
-            /* THIS NEEDS TO BE FIXED - its only displaying once on the first submit.
-            let newUserTimestamp = document.createElement("p");
-            document.getElementById("message-container").appendChild(newUserTimestamp);
-            newUserTimestamp.id = "usertime";
-            addTimestamp();
-            */
-           /*var objDiv = document.getElementById("message-container");
-           objDiv.scrollTop = objDiv.scrollHeight;
-
-
-
-let count = userMessage.length;
-            let newBotPElement = document.createElement("p");
-            newBotPElement.innerHTML = answerArr[count];
-            document.getElementById("message-container").appendChild(newBotPElement);
-            newBotPElement.className = "cathybubble";
-            objDiv.scrollTop = objDiv.scrollHeight;
-
-
-function addBotTimestamp(){
-    let newTimestamp = document.createElement("p");
-    let hours = addZero(date.getHours());
-    let minutes = addZero(date.getMinutes());
-    let seconds = addZero(date.getSeconds());
-    newTimestamp.innerHTML = hours + ":" + minutes + ":" + seconds;
-    document.getElementById("message-container").appendChild(newTimestamp);
-    newTimestamp.id = "bottime";
-    objDiv.scrollTop = objDiv.scrollHeight;
-    
-};
-
-
-
-
-
-*/
-
-
-
-
-
-    
+ 
 ///////////////////////////////////////////////////////
 
 
@@ -179,12 +130,6 @@ function addBotTimestamp(){
 
             /* This works 
             $('#message-container').addClass('userbubble'); */
-/*
-            setTimeout(function() {
-                    }, 2000);
-
-            /* Could make the messages an*/
-           
 /*
             $(function(){
 
@@ -215,16 +160,6 @@ function addBotTimestamp(){
                 });    
 
             });
-
-            console.log(lastMessage)
-
-
-
-                
-
-           
-
-            console.log(userMessage);
 
 
 */
