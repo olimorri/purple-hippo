@@ -122,6 +122,7 @@ h1{
     text-align: left;
     margin-left: 10px;
     margin-bottom: 0px;
+    position: relative;
 }
 
 .userbubble{
@@ -161,6 +162,23 @@ h1{
     color: whitesmoke;
     padding: 5px;
     border-radius: 0px 25px 25px 25px;
+}
+
+#dialog{
+    height: 50px;
+    width: auto;
+    background-color: pink;
+    align-self: center;
+}
+
+#online-status{
+    height: 25px;
+    width: 25px;
+    border-radius: 101px;
+    border: none;
+    margin-right: 5px;
+    outline: none;
+
 }
 
 
