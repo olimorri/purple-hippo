@@ -130,4 +130,5 @@ function messageFlow(){
 };
 
 /* ^^ This function and the functions within it control the chat experience and sequences.
-Coded in vanilla JS. */
+Coded in vanilla JS. I have added a timeout of 1sec after the bot response in order to make it
+appear that the response is being written. */
