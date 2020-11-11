@@ -1,9 +1,7 @@
 
-const answerArr = ["Hello", "My name is Cathy, what's your name?", "Nice to meet you!", "I'm sorry, but I have to go now.", "Goodbye!"];
+const answerArr = ["Hello, what's your name?", "Nice to meet you, I'm Cathy.", "How are you doing today?", "I'm sorry, but I've got to go now. Let's speak again soon?", "Goodbye!"];
 
 const userMessage = [];
-
-const firstMessage = answerArr[0];
 
 const objDiv = document.getElementById("message-container");
 
@@ -19,8 +17,15 @@ function userMessageFlow(){
     document.getElementById("message-container").appendChild(newUserPElement);
     newUserPElement.className = "userbubble";
     objDiv.scrollTop = objDiv.scrollHeight;
+    addTimestamp();
 
 };
+
+/* ^^ This function dicates how the message is sent and displayed in
+the "message-container" <div>. In this function I create a new <p>
+element and append it onto the end of the "message-container" <div>, giving
+the visual of the message 'appearing'. Alongside this I reset the input area 
+value to the default, add the timestamp, add the correct class to the element and auto scroll.  */
 
 
 function botMessageFlow(){
@@ -37,11 +42,16 @@ function botMessageFlow(){
     
 };
 
+/* ^^ This function is similar to userMessageFlow, but is slightly different as it auto sends
+messages from answerArr. This function only displays a value if the userMessage.length is < 6.
+This is because I wanted to create a definite end to the conversation instead of returning
+'undefined' values when all answers had been used.*/
+
 function botFinalMessage(){
 
     if(userMessage.length >= 6){
         let newBotPElement = document.createElement("p");
-        newBotPElement.innerHTML = "Chatty Cathy is offline!";
+        newBotPElement.innerHTML = "Cathy is offline!";
         document.getElementById("message-container").appendChild(newBotPElement);
         newBotPElement.className = "cathylastmessage";
         objDiv.scrollTop = objDiv.scrollHeight
@@ -52,14 +62,9 @@ function botFinalMessage(){
     };
 };
 
-function displayHello(){
-    let newBotPElement = document.createElement("p");
-    newBotPElement.innerHTML = answerArr[0];
-    document.getElementById("message-container").appendChild(newBotPElement);
-    newBotPElement.className = "cathybubble";
-    objDiv.scrollTop = objDiv.scrollHeight;
-    addBotTimestamp();
-};
+/* ^^ This function is similar to botMessageFlow, but only displays after a certain threshold.
+The function displays an 'offline' message and also changes the online indicator to red - using
+jQuery. */
 
 function addZero(i) {
     if (i < 10) {
@@ -67,6 +72,8 @@ function addZero(i) {
     }
     return i;
 };
+
+/* ^^ Function is used to add '0' to timestamp if needed */
 
 function addTimestamp(){
     let newDate = new Date();
@@ -93,11 +100,17 @@ function addBotTimestamp(){
     
 };
 
+/* ^^ Both of these functions set the timestamps for the bot and the user. In order to make sure
+the timestamp reflects the time the message was sent, I re-initialise Date() each time. */
+
 $("#message-input").keypress(function(e){
     if (e.which == 13){
         $("#send-button").click();
     }
 });
+
+/* ^^ This jQuery function is used to make sure that pressing ENTER or RETURN is treated the
+same as clicking the 'send' button. */
 
 $('#send-button').click(function() {
     $("#online-status").css(
@@ -105,79 +118,16 @@ $('#send-button').click(function() {
         );
 });  
 
-//#### Chat experience - coded in vanilla JS ####
+/* ^^ Once the button is clicked, or the ENTER/RETURN key is pressed, I have used jQuery
+to set the online status indicator to green - to indicate that Cathy is online.*/
 
-/* This function and the functions within it control the chat experience and sequences.
-Coded in JS. */
 function messageFlow(){
 
     userMessageFlow();
-    addTimestamp();
     setTimeout(botMessageFlow, 1000);
     botFinalMessage()
-    console.log(userMessage.length);
     
 };
 
-/* This function is triggered when the'send' button or enter key are pressed. 
-In the first instance I initialise the lastMessage
-variable with the text from the textarea. Following this, I have set the text area to return to empty.
-Next, a new <p> element is created to include the value of lastMessage and appended onto
-the end of the div element. This gives the impression of the message being delivered
-below (as with all chat apps). Finally, I use this process again for the bot's message,
-using the length of userMessage to ensure that the correct message is sent. */
-
-/*
-
- 
-///////////////////////////////////////////////////////
-
-
-
-/* CHANGE THIS TO VANILLA JS?
-
- var answerArr = ["Hello", "My name is Oliver, what's your name?", "Nice to meet you!"];
-
-            var userMessage = [];
-
-            var lastMessage;
-
-            
-
-            /* This works 
-            $('#message-container').addClass('userbubble'); */
-/*
-            $(function(){
-
-                $("#message-container").html(answerArr[0]);
-
-                $("#send-button").click(function(){
-
-                    lastMessage = $("#message-input").val();
-
-                    userMessage.push(lastMessage);
-                    $("#message-input").val("");
-                    var prevState = $("#message-container").html();
-                    let count = userMessage.length;
-
-                    //need to find a way to sort this out
-                    setTimeout(1);
-                    $("#message-container").html(prevState + "<br>" + lastMessage + "<br>" + answerArr[count]);
-                    $("#message-container").animate({ scrollTop: $(document).height() }, 1);
-
-
-
-                });
-
-                $("#message-input").keypress(function(e){
-                if (e.which == 13){
-                    $("#send-button").click();
-                    }
-                });    
-
-            });
-
-
-*/
-
-
+/* ^^ This function and the functions within it control the chat experience and sequences.
+Coded in vanilla JS. */
