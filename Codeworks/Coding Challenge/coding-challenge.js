@@ -27,8 +27,8 @@ function botMessageFlow(){
     let count = userMessage.length;
     let newBotPElement = document.createElement("p");
 
-    if (userMessage.length < 5){
-        newBotPElement.innerHTML = answerArr[count];
+    if (userMessage.length < 6){
+        newBotPElement.innerHTML = answerArr[count-1];
         document.getElementById("message-container").appendChild(newBotPElement);
         newBotPElement.className = "cathybubble";
         objDiv.scrollTop = objDiv.scrollHeight;
@@ -39,17 +39,26 @@ function botMessageFlow(){
 
 function botFinalMessage(){
 
-    if(userMessage.length >= 5){
-    let newBotPElement = document.createElement("p");
-    newBotPElement.innerHTML = "Chatty Cathy is offline!";
-    document.getElementById("message-container").appendChild(newBotPElement);
-    newBotPElement.className = "cathylastmessage";
-    objDiv.scrollTop = objDiv.scrollHeight
+    if(userMessage.length >= 6){
+        let newBotPElement = document.createElement("p");
+        newBotPElement.innerHTML = "Chatty Cathy is offline!";
+        document.getElementById("message-container").appendChild(newBotPElement);
+        newBotPElement.className = "cathylastmessage";
+        objDiv.scrollTop = objDiv.scrollHeight
+
+        $("#online-status").css(
+            'background-color', 'red'
+            );
     };
 };
 
 function displayHello(){
-    document.getElementById('first-message').innerHTML = firstMessage;
+    let newBotPElement = document.createElement("p");
+    newBotPElement.innerHTML = answerArr[0];
+    document.getElementById("message-container").appendChild(newBotPElement);
+    newBotPElement.className = "cathybubble";
+    objDiv.scrollTop = objDiv.scrollHeight;
+    addBotTimestamp();
 };
 
 function addZero(i) {
@@ -84,22 +93,29 @@ function addBotTimestamp(){
     
 };
 
-//#### Beginning of chat experience ####
+$("#message-input").keypress(function(e){
+    if (e.which == 13){
+        $("#send-button").click();
+    }
+});
 
-displayHello();
-addBotTimestamp();
-document.getElementById("message-input").addEventListener("keydown", function(e) {
-    if (e.keyCode == 13) { messageFlow(); }
-}, false);
+$('#send-button').click(function() {
+    $("#online-status").css(
+        'background-color', 'lime'
+        );
+});  
 
+//#### Chat experience - coded in vanilla JS ####
 
-/* This function and the functions within it control the chat experience and sequences. */
+/* This function and the functions within it control the chat experience and sequences.
+Coded in JS. */
 function messageFlow(){
 
     userMessageFlow();
     addTimestamp();
     setTimeout(botMessageFlow, 1000);
-    botFinalMessage();
+    botFinalMessage()
+    console.log(userMessage.length);
     
 };
 
