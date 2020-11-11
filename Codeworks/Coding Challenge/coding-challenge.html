@@ -10,12 +10,12 @@
         <div class='container'>
             <div class="heading-container">
                 <img id="cathy-pic" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/HMZU2?wid=572&hei=572&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1570128716901">
-                <h1 id="nametag">Chatty Cathy</h1>
+                <h1 id="nametag">Cathy</h1>
                 <button id="online-status"></button>
             </div>
             <div id='message-container'>
                 <div id="dialog" title="welcome-dialog">
-                    <p>Welcome to Chatty Cathy!
+                    <p>Welcome to my chatbot. Enter your message to get started!
                     </p>
                 </div>
             </div>
@@ -25,17 +25,12 @@
             </div>
         </div>
         <script> 
+        /* This jQuery function is used in order to set the default value for the online status indicator.*/
         $(document).ready(function() {
-            $("p").animate({
-                height: '+=150px',
-                width: '+=1000px'
-            });
             $("#online-status").css(
                 'background-color', 'red'
             );
-        }); 
-
-        
+        });
         </script>
         <script src="coding-challenge.js" type="text/javascript"></script>
     </body>
